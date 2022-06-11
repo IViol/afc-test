@@ -1,9 +1,21 @@
 <div class="content" role="main">
-  <app-regions></app-regions>
+  <app-regions
+    [name]="'region'"
+    [items]="regions"
+    (selectItem)="onRegionSelect($event.target)"
+  ></app-regions>
+
+  <app-regions
+    [name]="'country'"
+    [items]="countries | countryName"
+    (selectItem)="onCountrySelect($event.target)"
+  ></app-regions>
+
+  <app-country-details></app-country-details>
 
   <!-- Footer -->
   <footer>
-      by Ivan V
+    <a href="https://github.com/IViol/afc-test">by Ivan V</a>
   </footer>
 
 </div>

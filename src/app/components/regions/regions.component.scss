@@ -1,0 +1,13 @@
+.region-select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  label {
+    text-transform: capitalize;
+  }
+
+  select {
+    margin-left: 8px;
+  }
+}

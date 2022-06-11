@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegionsComponent } from './regions/regions.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CountryNamePipe } from './pipes/countryName.pipe';
+import { ComponentsModule } from './components/components.module'
+import { countriesReducer } from './store/countries/countries.reducer'
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegionsComponent
+    CountryNamePipe,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ComponentsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({ countriesState: countriesReducer }, {}),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+
+export class AppModule {}
