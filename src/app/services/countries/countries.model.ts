@@ -1,5 +1,7 @@
-export const EUROPE = 'Europe'
-export const ASIA = 'Asia'
+export enum Region {
+  'Europe' = 'Europe',
+  'Asia' = 'Asia'
+}
 
 type CountryFlags = {
   svg: string,
@@ -55,3 +57,5 @@ export type Country = {
   cioc?: string,
   independent: boolean,
 }
+
+export type CountriesByRegion = {[region: string]: Country[]}

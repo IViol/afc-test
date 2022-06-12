@@ -1,27 +1,30 @@
 import { createReducer, on } from '@ngrx/store'
 
 import { setCountries, selectRegion, selectCountry } from './countries.actions'
-import { EUROPE, ASIA, Country } from '../../services/countries/countries.model'
+import { CountriesByRegion, Region } from '../../services/countries/countries.model'
 
 export type CountriesState = {
-  regions: string[],
-  countries: Country[],
-  selectedRegion: string | undefined,
+  regions: Region[],
+  countries: CountriesByRegion,
+  selectedRegion: Region | undefined,
   selectedCountry: string | undefined,
 }
 
 export const initialCountriesState: CountriesState = {
-  regions: [EUROPE, ASIA],
-  countries: [],
+  regions: [Region.Europe, Region.Asia],
+  countries: {},
   selectedRegion: undefined,
   selectedCountry: undefined,
 }
 
 export const countriesReducer = createReducer(
   initialCountriesState,
-  on(setCountries, (state, { items }): CountriesState => ({
+  on(setCountries, (state, { region, items }): CountriesState => ({
     ...state,
-    countries: items,
+    countries: {
+      ...state.countries,
+      [region]: items,
+    },
   })),
   on(selectRegion, (state, { value }): CountriesState => ({
     ...state,

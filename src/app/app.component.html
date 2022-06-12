@@ -1,13 +1,13 @@
 <div class="content" role="main">
   <app-regions
     [name]="'region'"
-    [items]="regions"
+    [items]="regions$ | async | regionName"
     (selectItem)="onRegionSelect($event.target)"
   ></app-regions>
 
   <app-regions
     [name]="'country'"
-    [items]="countries | countryName"
+    [items]="countriesForRegion | countryName"
     (selectItem)="onCountrySelect($event.target)"
   ></app-regions>
 
@@ -15,7 +15,7 @@
 
   <!-- Footer -->
   <footer>
-    <a href="https://github.com/IViol/afc-test">by Ivan V</a>
+    <a href="https://github.com/IViol/afc-test" target="_blank" rel="noopener noreferrer">by Ivan V</a>
   </footer>
 
 </div>
