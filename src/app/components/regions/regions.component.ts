@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 })
 export class RegionsComponent implements OnInit {
   @Input() name: string = ''
+  @Input() value: string | null | undefined = ''
   @Input() items: string[] = []
   @Output() selectItem = new EventEmitter()
 

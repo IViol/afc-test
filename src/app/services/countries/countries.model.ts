@@ -8,7 +8,7 @@ type CountryFlags = {
   png: string,
 }
 
-type Currency = {
+export type Currency = {
   code: string,
   name: string,
   symbol: string,

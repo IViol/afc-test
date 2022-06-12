@@ -1,1 +1,22 @@
-<p>country-details works!</p>
+<table class="table table-striped mt-4">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Capital</th>
+    <th scope="col">Population</th>
+    <th scope="col">Currencies</th>
+    <th scope="col">Flag</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ country.name }}</td>
+    <td>{{ country.capital }}</td>
+    <td>{{ country.population | number }}</td>
+    <td>{{ country.currencies | currencyCodes }}</td>
+    <td>
+      <img [src]="country.flag" class="me-2" style="width: 20px" [alt]="country.name">
+    </td>
+  </tr>
+  </tbody>
+</table>

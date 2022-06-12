@@ -1,17 +1,19 @@
 <div class="content" role="main">
-  <app-regions
-    [name]="'region'"
-    [items]="regions$ | async | regionName"
-    (selectItem)="onRegionSelect($event.target)"
-  ></app-regions>
+  <div class="m-auto">
+    <app-regions
+      [name]="'region'"
+      [items]="regions$ | async | regionName"
+      (selectItem)="onRegionSelect($event.target)"
+    ></app-regions>
 
-  <app-regions
-    [name]="'country'"
-    [items]="countriesForRegion | countryName"
-    (selectItem)="onCountrySelect($event.target)"
-  ></app-regions>
+    <app-regions
+      [name]="'country'"
+      [items]="countriesForRegion | countryName"
+      (selectItem)="onCountrySelect($event.target)"
+    ></app-regions>
 
-  <app-country-details></app-country-details>
+    <app-country-details *ngIf="countryDetails" [country]="countryDetails"></app-country-details>
+  </div>
 
   <!-- Footer -->
   <footer>

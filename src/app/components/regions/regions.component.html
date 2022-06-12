@@ -1,11 +1,12 @@
-<div class="region-select">
-  <label for="{{ name }}">{{ name }}</label>
+<div class="region-select m-2">
+  <label class="text-capitalize" for="{{ name }}">{{ name }}</label>
   <select
+    class="ml-1"
     required
     name="{{ name }}"
     (change)="selectItem.emit($event)"
   >
-    <option disabled selected>Please select</option>
+    <option selected value="">Please select</option>
     <option *ngFor="let region of items" value="{{ region }}">{{ region }}</option>
   </select>
 </div>
