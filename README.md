@@ -1,6 +1,19 @@
 # AFC | DB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+## How it works
+
+* a user selects region - it requests a list of countries for the region
+* a user selects country - it displays a basic info about the country
+
+Note: if a country list for a region has been already loaded, the cached result is to be returned. Additional request is not needed.
+
+## Style guide
+
+This project uses [Airbnb style guide](https://github.com/airbnb/javascript), but with `semicolon` rule disabled.
+
+## SCSS
+
+This project uses [SCSS](https://sass-lang.com/) extension for CSS and [CSS Modules](https://github.com/css-modules/css-modules) naming convention.
 
 ## Development server
 
@@ -21,18 +34,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Style guide
-
-This project uses [Airbnb style guide](https://github.com/airbnb/javascript), but with `semicolon` rule disabled.
-
-## SCSS
-
-This project uses [SCSS](https://sass-lang.com/) extension for CSS and [CSS Modules](https://github.com/css-modules/css-modules) naming convention.
-
-## How it works
-
-* a user selects region - it requests a list of countries for the region
-* a user selects country - it displays a basic info about the country
-
-Note: if a country list for a region has been already loaded, the cached result is to be returned. Additional request is not needed.
