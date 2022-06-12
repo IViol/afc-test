@@ -1,3 +1,12 @@
+<header>
+  <img
+    alt="logo"
+    width="30"
+    height="30"
+    [src]="'assets/db_logo.gif'"
+  />
+</header>
+
 <div class="content" role="main">
   <div class="m-auto">
     <app-regions
@@ -15,11 +24,11 @@
     <app-country-details *ngIf="countryDetails" [country]="countryDetails"></app-country-details>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <a href="https://github.com/IViol/afc-test" target="_blank" rel="noopener noreferrer">by Ivan V</a>
-  </footer>
-
 </div>
+
+<!-- Footer -->
+<footer>
+  <a href="https://github.com/IViol/afc-test" target="_blank" rel="noopener noreferrer">by Ivan V</a>
+</footer>
 
 <router-outlet></router-outlet>

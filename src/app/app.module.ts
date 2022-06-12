@@ -11,7 +11,7 @@ import { RegionNamePipe } from './pipes/regionName.pipe'
 import { CountryNamePipe } from './pipes/countryName.pipe'
 import { ComponentsModule } from './components/components.module'
 import { CountriesEffects} from './store/countries/countries-effects'
-import { countriesReducer } from './store/countries/countries.reducer';
+import { countriesReducer } from './store/countries/countries.reducer'
 
 @NgModule({
   declarations: [
