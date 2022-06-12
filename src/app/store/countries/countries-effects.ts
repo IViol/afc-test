@@ -19,7 +19,7 @@ export class CountriesEffects {
         const region = (regionPayload as { type: string, value: Region }).value
         const isLoaded = !!countries[region]
 
-        if (!!isLoaded) {
+        if (!region || isLoaded) {
           return EMPTY
         }
 

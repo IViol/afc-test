@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs'
+import { map, Observable } from 'rxjs'
 import { Store } from '@ngrx/store'
 import { Component, OnInit } from '@angular/core'
 
@@ -48,15 +48,10 @@ export class AppComponent implements OnInit {
   onRegionSelect({ value }: SelectEventTarget) {
     this.countryDetails = undefined
     this.countriesForRegion = []
-
-    if (value) {
-      this.store.dispatch(selectRegion({ value: value as Region }))
-    }
+    this.store.dispatch(selectRegion({ value: value as Region | undefined }))
   }
 
   onCountrySelect({ value }: SelectEventTarget) {
-    if (value) {
-      this.store.dispatch(selectCountry({ value }))
-    }
+    this.store.dispatch(selectCountry({ value }))
   }
 }

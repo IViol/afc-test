@@ -7,5 +7,5 @@ export const selectRegionType = '[Countries] Select Region'
 export const selectCountryType = '[Countries] Select Country'
 
 export const setCountries = createAction(setCountriesType, props<{ region: Region, items: Country[] }>())
-export const selectRegion = createAction(selectRegionType, props<{ value: Region }>())
-export const selectCountry = createAction(selectCountryType, props<{ value: string }>())
+export const selectRegion = createAction(selectRegionType, props<{ value: Region | undefined }>())
+export const selectCountry = createAction(selectCountryType, props<{ value: string | undefined }>())
